@@ -1,0 +1,122 @@
+:root {
+  --sky-500: rgb(2 132 199);
+  --blue: rgb(14, 14, 68);
+  --light-gray: rgb(219, 219, 219);
+}
+
+#root {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-auto-columns: 2fr 1fr;
+  column-gap: 3rem;
+}
+
+.books-container {
+  display: grid;
+  grid-column: 1;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+
+  .book-card {
+    position: relative;
+    list-style: none;
+
+    img {
+      width: 100%;
+      aspect-ratio: 6 / 9;
+    }
+
+    .addToList {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem;
+      bottom: 0px;
+      font-size: 0.9em;
+      width: 100%;
+      background: var(--sky-500);
+      margin: 0;
+      opacity: 0.8;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.reading-list {
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  background-color: var(--blue);
+  padding: 1.5rem;
+  grid-column: 2;
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--light-gray);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    &:hover {
+      background: var(--light-gray);
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 5rem;
+  padding: 1rem;
+  margin: 1.3rem 0;
+  align-items: center;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  input,
+  select {
+    cursor: pointer;
+  }
+
+  select {
+    height: 1.5rem;
+  }
+
+  .ranged-input {
+    position: relative;
+
+    & > p {
+      position: absolute;
+      top: -18px;
+      right: -35px;
+      background-color: red;
+      border-radius: 100%;
+      width: 1.4rem;
+      height: 1.4rem;
+      cursor: default;
+    }
+  }
+}
