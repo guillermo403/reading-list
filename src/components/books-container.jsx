@@ -2,6 +2,7 @@ import * as bookService from '../services/books-service'
 
 export default function BooksContainer({ books, updateReadingList }) {
   const readinglist = bookService.getReadingList()
+  console.log(readinglist)
 
   return (
     <section>
@@ -15,7 +16,7 @@ export default function BooksContainer({ books, updateReadingList }) {
               src={book.cover}
               alt={book.title}
             />
-            {!readinglist.some(b => b === book) && (
+            {!readinglist.includes(book) && (
               <p
                 className='addToList'
                 onClick={() => updateReadingList({ book })}
