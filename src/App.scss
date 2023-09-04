@@ -1,8 +1,4 @@
-:root {
-  --sky-500: rgb(2 132 199);
-  --blue: rgb(23 37 84);
-  --light-gray: rgb(219, 219, 219);
-}
+@import './styles/common/colors.scss';
 
 #root {
   max-width: 1600px;
@@ -46,7 +42,7 @@ main {
       bottom: 0px;
       font-size: 0.9em;
       width: 100%;
-      background: var(--sky-500);
+      background: $sky-500;
       margin: 0;
       opacity: 0.8;
       cursor: pointer;
@@ -59,9 +55,9 @@ main {
 }
 
 .reading-list {
-  border: 1px solid var(--light-gray);
+  border: 1px solid $gray-300;
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: $blue-950;
   padding: 1.5rem;
   grid-column: 2;
 
@@ -69,7 +65,7 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--light-gray);
+    background: $gray-300;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -78,7 +74,7 @@ main {
     cursor: pointer;
     transition: background 0.2s ease-in-out;
     &:hover {
-      background: var(--light-gray);
+      background: $gray-300;
     }
   }
 }
@@ -112,7 +108,7 @@ main {
       position: absolute;
       top: -18px;
       right: -35px;
-      background-color: red;
+      background-color: $red-700;
       border-radius: 100%;
       width: 1.4rem;
       height: 1.4rem;
