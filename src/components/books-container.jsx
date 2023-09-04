@@ -2,7 +2,6 @@ import * as bookService from '../services/books-service'
 
 export default function BooksContainer({ books, updateReadingList }) {
   const readinglist = bookService.getReadingList()
-  console.log(readinglist)
 
   return (
     <section>

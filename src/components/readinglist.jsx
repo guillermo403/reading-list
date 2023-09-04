@@ -4,7 +4,6 @@ import * as bookService from '../services/books-service'
 export default function ReadingList({ books, updateReadingList }) {
   const handleClick = ({ book }) => {
     const newReadingList = bookService.removeFromReadingList({ book })
-    console.log(newReadingList)
     updateReadingList(newReadingList)
   }
 
